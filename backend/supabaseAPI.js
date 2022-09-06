@@ -2,14 +2,17 @@ import { supabase } from "./supabaseClient";
 
 export const supabaseAPI = {
   // returns { data }
-  getPost: async (id) => await supabase
-    .from('posts')
-    .select('*')
-    .eq('id', id)
-    .limit(1)
-    .single(),
-  getPosts: async () => await supabase
-    .from('posts')
-    .select('id, title')
-    .order('id', { ascending: false }),
-}
+  getPost: async (id) =>
+    await supabase.from("posts").select("*").eq("id", id).limit(1).single(),
+  getPosts: async () =>
+    await supabase
+      .from("posts")
+      .select("id, title")
+      .order("id", { ascending: false }),
+  getIds: async () =>
+    await supabase
+      .from("posts")
+      .select("id")
+      .order("id", { ascending: false })
+      .limit(10),
+};
