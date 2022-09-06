@@ -14,7 +14,6 @@ export default function Post() {
       {loading && <div>Loading...</div>}
       {error && <div>Something went wrong</div>}
       {!loading && <DisplayMarkdownAsArticle
-        key={post.created_at}
         title={post.title}
         date={post.created_at}
         markdown={marked.parse(post.content)}

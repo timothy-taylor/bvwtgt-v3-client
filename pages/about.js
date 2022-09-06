@@ -6,10 +6,10 @@ export default function About() {
       <h2 className="pt-8">Hi, I&apos;m Tim.</h2>
       <h3 className="max-w-sm">
         Software Developer | Frontend + Fullstack | Javascript, HTML5, CSS3,
-        React, Ruby on Rails
+        React, Node.JS
       </h3>
       <p className="text-justify">
-        I&apos;m a software developer using mostly Javascript and Ruby (with a bit
+        I&apos;m a software developer using mostly Javascript (with experience with Ruby and Ruby on Rails and a bit
         exploring with Lua, Rust, C/C++). I care about accessibility, good UI,
         and responsive designs.
       </p>

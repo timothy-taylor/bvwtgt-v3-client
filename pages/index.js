@@ -4,7 +4,7 @@ import { supabaseAPI } from "../backend/supabaseAPI";
 
 export default function Home({ posts }) {
   const displayPosts = posts.map((e) => (
-    <li key={e.created_at} className="p-0">
+    <li key={e.id} className="p-0">
       <Link href={`/post/${e.id}`}>
         <a className="block text-lg pb-2">
           {e.title}
