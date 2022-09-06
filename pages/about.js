@@ -45,29 +45,37 @@ export default function About() {
         <li>tea and espresso</li>
         <li>the Boston Celtics</li>
       </ul>
-      <div className="pt-12 w-full flex justify-around">
-        Explore:
-        <Link href="https://www.linkedin.com/in/timothy-g-taylor">
-          <a className="font-thin italic">
-            LinkedIn
-          </a>
-        </Link>
-        <Link href="https://github.com/timothy-taylor">
-          <a className="font-thin italic">
-            Github
-          </a>
-        </Link>
-        <Link href="https://tgtmusic.bandcamp.com/">
-          <a className="font-thin italic">
-            Bandcamp
-          </a>
-        </Link>
-        <Link href="https://open.spotify.com/artist/5pJDAJfpQWFQJVOB16Gx70?si=XUQiPH22QduDUyMmuIjV6g">
-          <a className="font-thin italic">
-            Spotify
-          </a>
-        </Link>
-      </div>
+      <p>Explore:</p>
+      <ul>
+        <li>
+          <Link href="https://www.linkedin.com/in/timothy-g-taylor">
+            <a className="font-thin italic">
+              LinkedIn
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="https://github.com/timothy-taylor">
+            <a className="font-thin italic">
+              Github
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="https://tgtmusic.bandcamp.com/">
+            <a className="font-thin italic">
+              Bandcamp
+            </a>
+          </Link>
+        </li>
+        <li>
+          <Link href="https://open.spotify.com/artist/5pJDAJfpQWFQJVOB16Gx70?si=XUQiPH22QduDUyMmuIjV6g">
+            <a className="font-thin italic">
+              Spotify
+            </a>
+          </Link>
+        </li>
+      </ul>
     </>
   )
 }
