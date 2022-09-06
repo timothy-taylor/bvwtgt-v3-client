@@ -11,5 +11,5 @@ export const supabaseAPI = {
   getPosts: async () => await supabase
     .from('posts')
     .select('id, title, created_at')
-    .order('id', { ascending: true }),
+    .order('id', { ascending: false }),
 }
