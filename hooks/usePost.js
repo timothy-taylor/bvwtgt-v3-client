@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabaseAPI } from "../api/supabaseAPI";
+import { supabaseAPI } from "../backend/supabaseAPI";
 
 export const usePost = (id) => {
   const [loadedPost, setLoadedPost] = useState([]);
@@ -7,14 +7,20 @@ export const usePost = (id) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    let ignore = false;
+
     const loadPost = async (id) => {
       const { data: post } = await supabaseAPI.getPost(id);
-      setLoadedPost(post);
+      if(!ignore) setLoadedPost(post);
     }
 
     loadPost(id)
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
+
+    return () => {
+      ignore = true
+    };
   }, [id])
 
   return { loading, post: loadedPost, error };

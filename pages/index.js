@@ -1,18 +1,29 @@
 import Link from "next/link";
-import { supabaseAPI } from "../api/supabaseAPI";
+import Head from "next/head";
+import { supabaseAPI } from "../backend/supabaseAPI";
 
 export default function Home({ posts }) {
   const displayPosts = posts.map((e) => (
-    <Link key={e.created_at} href={`/post/${e.id}`}>
-      <a className="block text-lg pb-2">
-        {e.title}
-      </a>
-    </Link>
+    <li key={e.created_at}>
+      <Link href={`/post/${e.id}`}>
+        <a className="block text-lg pb-2">
+          {e.title}
+        </a>
+      </Link>
+    </li>
   ));
 
   return (
     <>
-      {displayPosts}
+      <Head>
+        <title>bvwtgt</title>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <ul className="list-none">
+        {displayPosts}
+      </ul>
     </>
   )
 }
