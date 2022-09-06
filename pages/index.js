@@ -1,9 +1,7 @@
-import { usePosts } from "../hooks/usePosts";
 import Link from "next/link";
+import { supabaseAPI } from "../api/supabaseAPI";
 
-export default function Home() {
-  const { loading, posts, error } = usePosts();
-
+export default function Home({ posts }) {
   const displayPosts = posts.map((e) => (
     <Link key={e.created_at} href={`/post/${e.id}`}>
       <a className="block text-lg pb-2">
@@ -14,9 +12,17 @@ export default function Home() {
 
   return (
     <>
-      {loading && <div>Loading...</div>}
-      {error && <div>Something went wrong</div>}
       {displayPosts}
     </>
   )
+}
+
+export async function getStaticProps() {
+  const { data: posts } = await supabaseAPI.getPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  }
 }
