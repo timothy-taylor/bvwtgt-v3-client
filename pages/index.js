@@ -5,7 +5,7 @@ import Header from "../components/Header";
 
 export default function Home({ posts }) {
   const displayPosts = posts.map((e) => (
-    <li key={e.id} className="p-0 -indent-2 pl-2">
+    <li key={e.id} className="p-0 -indent-4 pl-4">
       <Link href={`/post/${e.id}`}>
         <a className="block text-lg pb-2">
           {e.title}
@@ -23,10 +23,11 @@ export default function Home({ posts }) {
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <Header
-        h2="Welcome"
+        h2="Hi and welcome."
         h3="This site houses writings and projects of Tim Taylor as he explores technology, sound, process, and design."
       />
-      <ul className="list-none m-0 pt-2">
+      <h4 className="py-2">Posts:</h4>
+      <ul className="list-none m-0">
         {displayPosts}
       </ul>
     </>
