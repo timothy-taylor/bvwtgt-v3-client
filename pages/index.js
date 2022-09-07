@@ -19,7 +19,7 @@ export default function Home({ posts }) {
         <title>bvwtgt</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/public/favicon.ico" />
       </Head>
       <ul className="list-none m-0">
         {displayPosts}

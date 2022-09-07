@@ -1,13 +1,13 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { marked } from "marked";
-import { DisplayMarkdownAsArticle } from "../../components/DisplayMarkdownAsArticle";
 import { supabaseAPI } from "../../backend/supabaseAPI";
+import DisplayMarkdownAsArticle from "../../components/DisplayMarkdownAsArticle";
 
 export default function Post({ post }) {
   const router = useRouter();
 
-  if (router.isFallback) return (<div>Loading...</div>)
+  if (router.isFallback) return <div>Loading...</div>;
   return (
     <div className="min-h-screen">
       <DisplayMarkdownAsArticle
@@ -21,14 +21,13 @@ export default function Post({ post }) {
         </Link>
       </div>
     </div>
-  )
+  );
 }
 
 export async function getStaticPaths() {
   //
-  // currently creating static paths for 
-  // the ids for the 10 most recent posts
-  const { data } = await supabaseAPI.getIds();
+  // currently creating static paths for the 10 most recent posts
+  const { data } = await supabaseAPI.getIds(10);
 
   //
   // the id comes as a number from supabase,
@@ -39,15 +38,16 @@ export async function getStaticPaths() {
     },
   }));
 
-  return { paths, fallback: true }
+  //
+  // fallback ensures that any posts not statically generated
+  // will be served at request time
+  return { paths, fallback: true };
 }
 
 export async function getStaticProps({ params }) {
   const { data: post } = await supabaseAPI.getPost(params.id);
 
   return {
-    props: {
-      post
-    }
-  }
+    props: { post },
+  };
 }

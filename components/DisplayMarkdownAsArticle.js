@@ -1,7 +1,7 @@
 import { useId, useEffect} from "react";
 import sanitizeHtml from "sanitize-html";
 
-export const DisplayMarkdownAsArticle = ({ title, date, markdown }) => {
+export default function DisplayMarkdownAsArticle({ title, date, markdown }) {
   const id = useId();
 
   useEffect(() => {
