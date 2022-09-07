@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Head from "next/head";
 import { supabaseAPI } from "../backend/supabaseAPI";
+import Header from "../components/Header";
 
 export default function Home({ posts }) {
   const displayPosts = posts.map((e) => (
@@ -21,6 +22,10 @@ export default function Home({ posts }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="icon" href="/public/favicon.ico" />
       </Head>
+      <Header
+        h2="Welcome"
+        h3="This site houses writings and projects of Tim Taylor as he explores technology, sound, process, and design."
+      />
       <ul className="list-none m-0">
         {displayPosts}
       </ul>

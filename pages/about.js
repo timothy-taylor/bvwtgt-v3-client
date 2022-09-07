@@ -1,13 +1,13 @@
 import Link from "next/link";
+import Header from "../components/Header";
 
 export default function About() {
   return (
     <>
-      <h2 className="pt-8">Hi, I&apos;m Tim.</h2>
-      <h3 className="max-w-sm">
-        Software Developer | Frontend + Fullstack | Javascript, HTML5, CSS3,
-        React, Node.JS
-      </h3>
+      <Header
+        h2="Hi, I&apos;m Tim."
+        h3="Software Developer | Frontend + Fullstack | Javascript, HTML5, CSS3, React, Node.JS"
+      />
       <p className="text-justify">
         I&apos;m a software developer using mostly Javascript (with experience with Ruby and Ruby on Rails and a bit
         exploring with Lua, Rust, C/C++). I care about accessibility, good UI,
