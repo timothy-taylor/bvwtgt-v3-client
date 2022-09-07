@@ -26,7 +26,7 @@ export default function Home({ posts }) {
         h2="Hi and welcome."
         h3="This site houses writings and projects of Tim Taylor as he explores technology, sound, process, and design."
       />
-      <h4 className="py-2">Posts:</h4>
+      <h4 className="pt-8 pb-2">Posts:</h4>
       <ul className="list-none m-0">
         {displayPosts}
       </ul>
