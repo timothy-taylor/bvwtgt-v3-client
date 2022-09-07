@@ -5,7 +5,7 @@ import Header from "../components/Header";
 
 export default function Home({ posts }) {
   const displayPosts = posts.map((e) => (
-    <li key={e.id} className="p-0">
+    <li key={e.id} className="p-0 -indent-2 pl-2">
       <Link href={`/post/${e.id}`}>
         <a className="block text-lg pb-2">
           {e.title}
