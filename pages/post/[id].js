@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { marked } from "marked";
 import { supabaseAPI } from "../../backend/supabaseAPI";
@@ -10,6 +11,10 @@ export default function Post({ post }) {
   if (router.isFallback) return <div>Loading...</div>;
   return (
     <div className="min-h-screen">
+      <Head>
+        <title>{post.title}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <DisplayMarkdownAsArticle
         title={post.title}
         date={post.created_at}
